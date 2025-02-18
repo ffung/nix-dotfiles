@@ -24,6 +24,10 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
+  system.defaults.trackpad.ActuationStrength = 0;
+  system.defaults.trackpad.Clicking = true;
+  system.defaults.trackpad.Dragging = true;
+  system.defaults.NSGlobalDomain."com.apple.trackpad.scaling" = 2.0;
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
   system.activationScripts.postUserActivation.text = ''
