@@ -18,6 +18,9 @@
   programs.zsh.enable = true;  # default shell on catalina
   programs.zsh.promptInit = "";
 
+  # Allow sudo to use Touch ID
+  security.pam.enableSudoTouchIdAuth = true;
+
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
