@@ -18,30 +18,23 @@
     };
   };
 
-  outputs = { self, darwin, nixpkgs, nixcats, claude-code, home-manager, ... }@inputs:
+  outputs = { self, darwin, nixcats, claude-code, home-manager, ... }@inputs:
     let
       system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
 
       inherit (darwin.lib) darwinSystem;
-      inherit (inputs.nixpkgs.lib) attrValues makeOverridable optionalAttrs singleton;
+      inherit (inputs.nixpkgs.lib) attrValues;
 
       nixpkgsConfig = {
         config = {
           allowUnfree = true;
           allowBroken = true;
         };
-        overlays = attrValues self.overlays ++ singleton (
-          # Substitute in x86 version of packages that don't build on Apple Silicon
-          final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
-          inherit (final.pkgs-x86)
-          ;
-          })
-        );
+        overlays = attrValues self.overlays;
       };
     in {
       overlays = {};
-      darwinConfigurations = rec {
+      darwinConfigurations = {
         "MacBook-of-Fai-Fung" = darwinSystem {
           system = system;
 
@@ -50,6 +43,7 @@
             home-manager.darwinModules.home-manager {
               nixpkgs = nixpkgsConfig;
               # `home-manager` config
+              home-manager.backupFileExtension = "bak";
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.fai = import ./modules/home.nix;

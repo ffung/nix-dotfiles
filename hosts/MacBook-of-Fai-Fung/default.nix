@@ -32,6 +32,7 @@
     "maccy"
     "obsidian"
     "visual-studio-code"
+    "cursor"
   ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.

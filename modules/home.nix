@@ -16,7 +16,9 @@
       allowUnfree = true;
     }
   '';
+  home.sessionPath = [ "$HOME/.local/bin" ];
   home.file.".config/nix/nix.conf".text = "experimental-features = nix-command flakes";
+  home.file.".local/bin/obsidian-cli".source = config.lib.file.mkOutOfStoreSymlink "/Applications/Obsidian.app/Contents/MacOS/obsidian-cli";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
