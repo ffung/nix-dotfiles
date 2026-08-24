@@ -60,17 +60,17 @@
         "type": "github"
       }
     },
-    "nixcats": {
+    "my-nvim": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
         "wrappers": "wrappers"
       },
       "locked": {
-        "lastModified": 1787314739,
-        "narHash": "sha256-BdWttfkFabqZCyekQilY0boDx7FTcbJ1ub5JNyKBq1Y=",
+        "lastModified": 1787576100,
+        "narHash": "sha256-FqFtFWHjaTedJhOxMEsRckYZ576LLMJ8zJI38vUVqQQ=",
         "owner": "ffung",
         "repo": "my-nvim",
-        "rev": "0e9b6eb89cbedfdecbc908ca4267127417cb40ad",
+        "rev": "ceabcdd3c1899cd2ca655c8ea1ee9ab044b97d13",
         "type": "github"
       },
       "original": {
@@ -132,7 +132,7 @@
         "claude-code": "claude-code",
         "darwin": "darwin",
         "home-manager": "home-manager",
-        "nixcats": "nixcats",
+        "my-nvim": "my-nvim",
         "nixpkgs": "nixpkgs_3"
       }
     },
@@ -154,7 +154,7 @@
     "wrappers": {
       "inputs": {
         "nixpkgs": [
-          "nixcats",
+          "my-nvim",
           "nixpkgs"
         ]
       },

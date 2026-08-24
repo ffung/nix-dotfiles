@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixcats.url = "git+file:../my-nvim";
-    nixcats.url = "github:ffung/my-nvim";
+    # my-nvim.url = "git+file:../my-nvim";
+    my-nvim.url = "github:ffung/my-nvim";
     claude-code.url = "github:sadjow/claude-code-nix";
 
     home-manager = {
@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { self, darwin, nixcats, claude-code, home-manager, ... }@inputs:
+  outputs = { self, darwin, my-nvim, claude-code, home-manager, ... }@inputs:
     let
       system = "aarch64-darwin";
 
@@ -48,7 +48,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.fai = import ./modules/home.nix;
               home-manager.extraSpecialArgs = {
-                inherit nixcats;
+                inherit my-nvim;
                 inherit claude-code;
               };
             }

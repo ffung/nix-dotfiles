@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nixcats, claude-code, ... }:
+{ config, pkgs, lib, my-nvim, claude-code, ... }:
 
 {
   # This value determines the Home Manager release that your
@@ -188,7 +188,7 @@
 
     keybase
 
-    nixcats.packages.${pkgs.stdenv.hostPlatform.system}.default
+    my-nvim.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
