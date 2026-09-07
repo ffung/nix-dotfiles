@@ -29,6 +29,7 @@
   homebrew.enable = true;
   homebrew.casks = [
     "ghostty"
+    "keybase"
     "maccy"
     "obsidian"
     "visual-studio-code"

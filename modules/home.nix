@@ -186,8 +186,6 @@
     kind
     nodejs
 
-    keybase
-
     my-nvim.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
