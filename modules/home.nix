@@ -191,6 +191,8 @@
 
     my-nvim.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+    github-copilot-cli
   ];
 }
 
