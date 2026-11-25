@@ -26,7 +26,17 @@
   ];
 
   # Homebrew managed applications
+  # CLI tools come from nixpkgs. Casks are for GUI apps that update themselves
+  # (Nix-installed apps can't, so they'd only update on flake bump + rebuild).
+  # brew is intentionally kept off PATH; nix-darwin manages it declaratively.
   homebrew.enable = true;
+  homebrew.onActivation = {
+    autoUpdate = true;  # keep brew itself current
+    upgrade = true;     # upgrade casks on rebuild
+    # Remove anything not declared here. Not "zap": that also trashes app
+    # settings/data, which would break migrating a cask to its nixpkgs version.
+    cleanup = "uninstall";
+  };
   homebrew.casks = [
     "ghostty"
     "keybase"
