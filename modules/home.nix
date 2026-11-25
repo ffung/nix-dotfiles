@@ -171,6 +171,11 @@
     };
   };
 
+  # Personal workbench: tools whose version I decide and want everywhere
+  # (editor, LSPs, generic CLI tools). Toolchains a project/client pins
+  # (terraform, cloud CLIs, helm, ...) belong in that project's shell.nix,
+  # loaded via direnv `use nix`, so each project gets its own versions.
+  # GUI apps are casks in hosts/*/default.nix; machine/OS settings live there too.
   home.packages = with pkgs; [
     git-credential-manager
     coreutils
