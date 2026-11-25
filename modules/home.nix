@@ -79,7 +79,7 @@
         contents = {
           user = {
             email = "ffung@xebia.com";
-            signingKey = "DF8603B7";
+            signingKey = "E3C04B098698CD25631B8636CB819C51CB93DC30";
           };
 
           commit.gpgSign = true;
@@ -91,7 +91,7 @@
         contents = {
           user = {
             email = "fai.fung@ns.nl";
-            signingKey = "1029D826357ECD6D";
+            signingKey = "0B48D8D1DAA540075ECBFA9B8AA32EA96EB46C3A";
           };
 
           commit.gpgSign = true;
