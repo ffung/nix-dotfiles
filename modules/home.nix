@@ -77,6 +77,9 @@
     # userEmail = "fai.fung@gmail.com";
 
     includes = [
+      # Untracked, per-machine settings (client orgs, tenants). Silently skipped if missing.
+      { path = "~/.config/git/local.conf"; }
+
       {
         condition = "gitdir:~/work/xebia/**";
         contents = {
